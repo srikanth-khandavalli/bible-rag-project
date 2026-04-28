@@ -1,0 +1,8 @@
+# Exclude data folder from language statistics
+data/** linguist-vendored
+
+# Exclude any SQL dumps from language statistics
+*.sql linguist-vendored
+
+# Ensure Python files are always recognized as primary
+*.py linguist-detectable
