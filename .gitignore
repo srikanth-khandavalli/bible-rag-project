@@ -2,3 +2,7 @@
 __pycache__/
 __pycache__
 chromadb/
+src/check_db.py
+src/test_api.py
+src/verifying_db.py
+src/rag_engine_20260427.py
