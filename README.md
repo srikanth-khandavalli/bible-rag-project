@@ -15,8 +15,8 @@ An advanced Retrieval-Augmented Generation (RAG) system designed to assist in de
 - **Models**: Google Gemini 1.5 Flash & Meta Llama 3.2 (via Ollama)
 ## Installation Commands
 1. Windows (PowerShell)On Windows, you can use a one-line command to download and run the installer automatically:
- Win+R --> cmd
- irm https://ollama.com/install.ps1 | iex
+    Win+R --> cmd
+    irm https://ollama.com/install.ps1 | iex
 
 2. Alternatively, you can download the .exe manually from ollama.com.
 Linux (Terminal)Linux uses a simple curl script that handles the entire setup, including GPU support detection:
@@ -30,24 +30,27 @@ Linux (Terminal)Linux uses a simple curl script that handles the entire setup, i
 
 3. VerificationAfter the download finishes, verify it's in your local "library" by running:
 
-ollama list
+    ollama list
 
-## 🚀 Quick Start
+## 🚀 Quick Start with local LLM
 1. **Clone & Install**:
    ```bash
    pip install -r requirements.txt
 
-2. Setup Local LLM:
-
+2. **Setup Local LLM (Windows)**:
     ```bash
+    irm https://ollama.com/install.ps1 | iex
     ollama pull llama3.2
-    Ingest Data:
+2. **Setup Local LLM (Linux)**:
+    ```bash
+    Bashcurl -fsSL https://ollama.com/install.sh | sh
+    ollama pull llama3.2
 
-3. Ingest Data:
+3. **Ingest Data**:
     ```bash
     python src/ingestion.py
 
-4. Run Study:
+4. **Run Study**:
     ```bash
     python src/local_rag.py
 
