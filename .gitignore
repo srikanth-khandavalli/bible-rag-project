@@ -6,3 +6,5 @@ src/check_db.py
 src/test_api.py
 src/verifying_db.py
 src/rag_engine_20260427.py
+src/local_rag_20260429.py
+src/rag_engine_20260429.py
