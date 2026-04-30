@@ -19,7 +19,7 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 vector_db = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 
 print("[CLOUD] Awakening Gemini 1.5 Flash...")
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=api_key)
 
 # ==========================================
 # 2. HELPER FUNCTIONS
