@@ -18,7 +18,7 @@ print("\n[CLOUD] Initializing Librarian (Hugging Face) & Bible Brain (ChromaDB).
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 vector_db = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
 
-print("[CLOUD] Awakening Gemini 1.5 Flash...")
+print("[CLOUD] Awakening Gemini 2.5 Flash...")
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=api_key)
 
 # ==========================================

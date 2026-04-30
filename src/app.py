@@ -8,10 +8,10 @@ st.set_page_config(page_title="Bible Research Assistant", layout="wide")
 st.sidebar.title("🛠️ System Controls")
 
 # --- THE NEW TOGGLE SWITCH ---
-st.sidebar.subheader("Brain Selection")
+st.sidebar.subheader("Engine Selection")
 engine_choice = st.sidebar.radio(
     "Choose your AI Scholar:",
-    ["Local Llama 3.2 (Privacy & Secure)", "Cloud Gemini 1.5 (High-Speed)"],
+    ["Local Llama (Privacy & Secure)", "Cloud Gemini (High-Speed)"],
     help="Local is 100% private but slower. Cloud is fast but uses an external API."
 )
 
@@ -24,7 +24,7 @@ else:
 st.sidebar.divider()
 
 # Narrative Window Slider
-window_size = st.sidebar.slider("Narrative Window (Verses)", 1, 5, 2)
+window_size = st.sidebar.slider("Verses Search Window", 1, 5, 2)
 st.sidebar.info(f"Retrieving ±{window_size} surrounding verses for context.")
 
 st.sidebar.divider()
@@ -40,7 +40,7 @@ query = st.text_input("Enter your theological question:", placeholder="e.g., Wha
 
 if st.button("Analyze Scripture"):
     if query:
-        with st.spinner(f"The Scholar is consulting the scrolls using {engine_choice.split()[0]}..."):
+        with st.spinner(f"Running {engine_choice.split()[0]} engine..."):
             start_time = time.time()
             
             # --- ROUTING LOGIC ---
@@ -58,14 +58,14 @@ if st.button("Analyze Scripture"):
             elapsed = round(end_time - start_time, 2)
 
         # 4. DISPLAY THE RESULTS
-        st.subheader("🎓 Scholar's Synthesis")
+        st.subheader("🎓 AI Analysis")
         st.write(response)
         st.caption(f"Analysis completed in {elapsed} seconds.")
 
         st.divider()
         
         # 5. DISPLAY THE SOURCE CARDS
-        st.subheader("📚 Verified Narrative Context")
+        st.subheader("📚 Scriptures referred")
         
         if sources:
             for source in sources:
